@@ -32,5 +32,8 @@ Login to the container,
 docker exec -it app_server /bin/bash -c "TERM=$TERM exec bash"
 ~~~~
 
-# By
-Well....me
+# By SocialNerds
+* [SocialNerds.gr](https://www.socialnerds.gr/)
+* [YouTube](https://www.youtube.com/SocialNerdsGR)
+* [Facebook](https://www.facebook.com/SocialNerdsGR)
+* [Twitter](https://twitter.com/socialnerdsgr)
