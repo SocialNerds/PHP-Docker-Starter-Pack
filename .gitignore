@@ -1,1 +1,11 @@
 .env
+.settings
+.buildpath
+.project
+.idea
+._.DS_Store
+.DS_Store
+tests_logs
+public.pem
+private.key
+data/www/laravel

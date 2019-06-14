@@ -1,13 +1,13 @@
 version: '3'
 
 services:
-  server:
+  http:
     build:
-      context: ./server
+      context: ./http
       args:
-        UID: ${USER_ID}
-        GID: ${GROUP_ID}
-    container_name: app_server
+        UID: ${UID}
+        GID: ${GID}
+    container_name: app_http
     restart: always
     ports:
       - 80:80
@@ -19,14 +19,12 @@ services:
       - fpm
     networks:
       app_net:
-        aliases:
-          - server
   fpm:
     build:
       context: ./fpm
       args:
-        UID: ${USER_ID}
-        GID: ${GROUP_ID}
+        UID: ${UID}
+        GID: ${GID}
     container_name: app_fpm
     restart: always
     volumes:
