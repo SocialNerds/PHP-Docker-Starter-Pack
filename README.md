@@ -31,7 +31,7 @@ You may add new alias for this folder in ./http/vhosts/main.conf
 
 Login to the container,
 ~~~~
-docker exec -it app_server /bin/bash -c "TERM=$TERM exec bash"
+docker exec -it app_fpm /bin/bash -c "TERM=$TERM exec bash"
 ~~~~
 
 Exit the container,
