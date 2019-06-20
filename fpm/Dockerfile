@@ -35,14 +35,17 @@ RUN sed -i -e"s/^user\s=\swww-data/user = serveruser/" /usr/local/etc/php-fpm.d/
   # Xdebug.
   pecl install xdebug && docker-php-ext-enable xdebug
 
+# Copy Opcache config.
+COPY config/opcache.ini /usr/local/etc/php/conf.d/
+
 # Copy Xdebug config.
-COPY xdebug.ini /usr/local/etc/php/conf.d/
+COPY config/xdebug.ini /usr/local/etc/php/conf.d/
 
 USER serveruser
 RUN echo "PATH=$PATH:~/.composer/vendor/bin" >> ~/.bashrc && \
   composer global require laravel/installer
 
-WORKDIR /home/serveruser
+WORKDIR /home/serveruser/www/project
 USER root
 
 ENTRYPOINT ["php-fpm"]
