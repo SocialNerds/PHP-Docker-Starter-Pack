@@ -13,7 +13,7 @@ RUN sed -i -e"s/^user\s=\swww-data/user = serveruser/" /usr/local/etc/php-fpm.d/
   # User.
   groupadd -r serveruser -g $GID && useradd -ms /bin/bash serveruser -u $UID -g $GID && \
   apt-get update && apt-get install -y \
-  libpng-dev libjpeg-dev git wget nano libzip-dev zip unzip mysql-client && \
+  libpng-dev libjpeg-dev git wget nano libzip-dev zip unzip mariadb-client && \
   # Other packages.
   docker-php-ext-install pdo_mysql && \
   docker-php-ext-configure gd --with-jpeg-dir=/usr/include/ && \
